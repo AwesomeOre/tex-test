@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulțumim de comandă</title>
+    <style>
+        body {
+            background-color: #ffff00; /* Yellow background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height */
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif; /* Set font family */
+        }
+
+        .thank-you-text {
+            text-align: center; /* Center text */
+            font-size: 36px; /* Set font size */
+            
+        }
+        .redirect {
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+            list-style: none;
+        }
+    </style>
+    <script>
+        setTimeout(function() {
+            window.location.href = "index.html"; 
+        }, 5000); 
+    </script>
+</head>
+<body>
+    <div class="thank-you-text">
+        Mulțumim de comandă
+        <li class="redirect">Veți fi redirecționați în 5 secunde</li>
+        
+    </div>
+</body>
+</html>

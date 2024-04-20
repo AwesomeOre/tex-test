@@ -1,0 +1,337 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffff00;
+  transition: background-color 0.3s ease;
+}
+
+#navbar {
+  background-color: #000000;
+  color: #ffff00;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  font-family: monospace;
+}
+
+.dark-mode #navbar {
+  background-color: #ffff00;
+  color: #000000;
+}
+
+#logo img {
+  height: 40px;
+}
+
+#command-button {
+  background-color: #ffff00;
+  color: #000000;
+  border: none;
+  padding: 15px 30px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  border-radius: 50px;
+  font-family: Vollkorn, serif;
+  box-shadow: 0 0 0 4px #000000;
+}
+
+#command-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 4px #ffff00;
+  color: #ffff00;
+  background-color: #000000;
+}
+
+.contact-toggle {
+  display: flex;
+  align-items: center;
+}
+
+#dark-mode-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+#dark-mode-toggle img {
+  width: 24px;
+  height: auto;
+  display: block;
+}
+
+#dark-mode-toggle:hover img {
+  filter: invert(100%);
+}
+
+#dark-mode-toggle:hover {
+  transform: scale(1.1);
+}
+
+.dark-mode {
+  background-color: #000000;
+  color: #ffff00;
+}
+
+.dark-mode #logo img {
+  filter: invert(100%);
+}
+
+.dark-mode #command-button {
+  box-shadow: 0 0 0 4px #000000;
+}
+
+.dark-mode #command-button:hover {
+  box-shadow: 0 0 0 4px #3e24ff;
+  color: #3e24ff;
+}
+
+#dark-mode-toggle:hover {
+  transform: scale(1.1);
+}
+
+.dark-mode #dark-mode-toggle:hover {
+  filter: invert(100%);
+}
+
+@media screen and (max-width: 600px) {
+  #navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  #logo {
+    order: 1;
+    margin: 10px;
+  }
+  #command-button {
+    order: 2;
+    margin: 10px;
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+  #dark-mode-toggle {
+    order: 3;
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+  }
+}
+.title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.slider-container {
+  position: relative;
+  margin: auto;
+  width: 80%;
+  margin-top: 20px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.slider-container.dark-mode {
+  border-color: #ffff00;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  transition: transform 0.3s ease;
+}
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider img {
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  margin-right: 20px;
+  border: 1px solid #000;
+  border-radius: 8px;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 16px;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+footer {
+  background-color: #000000;
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: 300px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1000;
+  margin-top: 100px;
+  height: 100px;
+}
+
+footer img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.copyright {
+  color: #ffff00;
+}
+
+#back-button {
+  background-color: #ffff00;
+  color: #000000;
+  border: none;
+  padding: 15px 30px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  border-radius: 50px;
+  font-family: Vollkorn, serif;
+  box-shadow: 0 0 0 4px #000000;
+  margin-right: 20px;
+}
+
+#back-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 4px #ffffff;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+/* Define styles for the content box */
+.content-box {
+  margin: 20px auto;
+  max-width: 1300px;
+  background-color: #000000;
+  border: 2px solid #ffff00;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #ffff00;
+  text-align: center;
+}
+
+.dark-mode .content-box {
+  background-color: #000000;
+  color: #ffff00;
+}
+
+/* Define styles for the dropdown button */
+.dropbtn {
+  background-color: #ffff00;
+  color: #000000;
+  border: none;
+  padding: 15px 30px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  border-radius: 0px;
+  font-family: Vollkorn, serif;
+  box-shadow: 0 0 0 4px #000000;
+  margin-bottom: 20px;
+  width: auto;
+}
+
+.dropbtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 4px #ffffff;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #000000;
+  border: 2px solid #ffff00;
+  border-radius: 8px;
+  color: #ffff00;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  text-align: center;
+  left: 0;
+  top: calc(100% + 10px);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.dropdown-content a {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #ffff00;
+  color: #000000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#text-input, #phone-input, #address-input {
+  background-color: #000000;
+  color: #ffff00;
+  border: 2px solid #ffff00;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  width: calc(50% - 5px);
+  margin: 10px;
+}
+
+#text-input:hover, #phone-input:hover, #address-input:hover {
+  border-color: #000000;
+}
+
+#text-input:focus, #phone-input:focus, #address-input:focus {
+  outline: none;
+  border-color: #ffff00;
+}
+
+/* Adjust the size of the text input boxes */
+#text-input, #phone-input, #address-input {
+  width: calc(50% - 20px);
+}/*# sourceMappingURL=main.css.map */

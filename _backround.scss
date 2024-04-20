@@ -1,0 +1,29 @@
+body {
+    overflow-x: hidden;
+}
+
+
+
+footer {
+    background-color: #000000; 
+    position: relative; 
+    width: 100%; 
+    margin-left: auto; 
+    margin-right: 300px; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1000; 
+    margin-top: 100px;
+    height: 100px;
+}
+
+footer img {
+    height: 40px;
+    margin-right: 10px;
+    
+}
+
+.copyright {
+    color: #ffff00; 
+}

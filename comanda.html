@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandă</title>
+    <link rel="stylesheet" href="main.css"> 
+    <style>
+        #button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px; 
+        }
+
+        /* Define styles for the process button */
+        #process-button {
+            background-color: #ffff00;
+            color: #000000; 
+            border: none;
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+            border-radius: 50px;
+            font-family: Vollkorn, serif;
+            box-shadow: 0 0 0 4px #000000;
+        }
+
+        #process-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 4px #ffffff;
+        }
+
+        /* Dark mode styles */
+        .dark-mode #process-button {
+            background-color: #ffff00; 
+            color: #000000; 
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div id="logo">
+            <img src="images\TAXICIORDEALES-removebg-preview.png" alt="TAXICIORDEALES">
+        </div>
+        
+        <a href="index.html"><button id="back-button">Înapoi</button></a>
+        <button id="dark-mode-toggle">
+            <img src="images\day-and-night.png" alt="Dark Mode">
+        </button>
+    </div>
+
+
+    <div class="content-box">
+        
+        <h2>Comandă</h2>
+        <p>Selectați localitatea </p>
+        
+
+        <div class="dropdown">
+            <button class="dropbtn" id="selected-option">Select a Municipality</button>
+            <input type="text" id="text-input" placeholder="Oraș/Sat...">
+            <div class="dropdown-content">
+              
+               
+                   
+                    <a href="#" onclick="selectOption('Municipiul Chișinău')">Municipiul Chișinău</a>
+                    <a href="#" onclick="selectOption('Municipiul Bălți')">Municipiul Bălți</a>
+                    <a href="#" onclick="selectOption('Municipiul Bender (Tighina)')">Municipiul Bender (Tighina)</a>
+                   
+                    <a href="#" onclick="selectOption('Ungheni')">Ungheni</a>
+                    <a href="#" onclick="selectOption('Orhei')">Orhei</a>
+                   
+                    <a href="#" onclick="selectOption('Nisporeni')">Nisporeni</a>
+                    <a href="#" onclick="selectOption('Ocnița')">Ocnița</a>
+                   
+                    <a href="#" onclick="selectOption('Hîncești')">Hîncești</a>
+                    <a href="#" onclick="selectOption('Ialoveni')">Ialoveni</a>
+                   
+                    <a href="#" onclick="selectOption('Dondușeni')">Dondușeni</a>
+                    <a href="#" onclick="selectOption('Drochia')">Drochia</a>
+                   
+                    <a href="#" onclick="selectOption('Soroca')">Soroca</a>
+                    <a href="#" onclick="selectOption('Sîngerei')">Sîngerei</a>
+                   
+                    <a href="#" onclick="selectOption('Fălești')">Fălești</a>
+                    <a href="#" onclick="selectOption('Florești')">Florești</a>
+                   
+                    <a href="#" onclick="selectOption('Briceni')">Briceni</a>
+                    <a href="#" onclick="selectOption('Călărași')">Călărași</a>
+                   
+                    <a href="#" onclick="selectOption('Cantemir')">Cantemir</a>
+                    <a href="#" onclick="selectOption('Căușeni')">Căușeni</a>
+                   
+                    <a href="#" onclick="selectOption('Cimișlia')">Cimișlia</a>
+                    <a href="#" onclick="selectOption('Leova')">Leova</a>
+                   
+                    <a href="#" onclick="selectOption('Strășeni')">Strășeni</a>
+                    <a href="#" onclick="selectOption('Rezina')">Rezina</a>
+                   
+                    <a href="#" onclick="selectOption('Taraclia')">Taraclia</a>
+                    <a href="#" onclick="selectOption('Telenești')">Telenești</a>
+                   
+                    <a href="#" onclick="selectOption('Șoldănești')">Șoldănești</a>
+                    <a href="#" onclick="selectOption('Criuleni')">Criuleni</a>
+                   
+                    <a href="#" onclick="selectOption('Cahul')">Cahul</a>
+                    <a href="#" onclick="selectOption('Camenca')">Camenca</a>
+                   
+                    <a href="#" onclick="selectOption('Bălți')">Bălți</a>
+                    <a href="#" onclick="selectOption('Basarabeasca')">Basarabeasca</a>
+                   
+                    <a href="#" onclick="selectOption('Anenii Noi')">Anenii Noi</a>
+                    <a href="#" onclick="selectOption('Bender')">Bender</a>
+                   
+                    <a href="#" onclick="selectOption('Ceadîr-Lunga')">Ceadîr-Lunga</a>
+                    <a href="#" onclick="selectOption('Căinari')">Căinari</a>
+                   
+                    <a href="#" onclick="selectOption('Căușeni')">Căușeni</a>
+                    <a href="#" onclick="selectOption('Călărași')">Călărași</a>
+                   
+        
+
+            </div>
+        </div>
+   
+        <input type="text" id="phone-input" placeholder="Număr de telefon...">
+        <input type="text" id="address-input" placeholder="Adresă...">
+    </div>
+
+ 
+    <div id="button-container">
+        <button id="process-button" onclick="processCommand()">Procesează</button>
+    </div>
+    
+    <script src="DARKMODE.js"></script> 
+    <script src="dropdown.js"></script> 
+    <script>
+     
+        function processCommand() {
+
+            
+            var municipality = document.getElementById('selected-option').textContent.trim();
+            var city = document.getElementById('text-input').value.trim();
+            var phone = document.getElementById('phone-input').value.trim();
+            var address = document.getElementById('address-input').value.trim();
+
+   
+            if (municipality === 'Select a Municipality' || city === '' || phone === '' || address === '') {
+                alert('DA CREZI CĂ NOI ȘTIM UNDE DRACU EȘTI PUNEȚI DATELE');
+            } else {
+               
+                setTimeout(function() {
+                    window.location.href = 'thankyou.html';
+                }, 5);
+            }
+        }
+
+       
+        function selectOption(option) {
+    document.getElementById('selected-option').textContent = option;
+}
+    </script>
+   <footer>
+    <div class="copyright">
+        
+        <span>&copy; ©2024 TaxiCiordeales. All rights reserved. Vrei bătaie?</span>
+    </div>
+ <script></script>
+</footer>   
+</body>
+
+</html>
